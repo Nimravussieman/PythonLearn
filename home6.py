@@ -54,14 +54,11 @@ def func4():
     """
     L = input("input password: ")
     char = False
-    ch = 0
     digit = False
     di = 0
     for x in L:
         if not char and x.isupper():
-            ch += 1
-            if ch == 1:
-                char = True
+            char = True
         elif not digit and x.isdigit():
             di += 1
             if di == 5:
@@ -73,7 +70,7 @@ def func4():
         print("Your password is strong.")
     else:
         print("Your password is not strong enough.")
-#func4()
+func4()
 
 def func5():
     try:
@@ -126,7 +123,7 @@ def func8(x):
         L.append(L[i-2]+L[i-1])
         i+=1
     print(L)
-func8(25)
+#func8(25)
 
 
 def pr(L):
