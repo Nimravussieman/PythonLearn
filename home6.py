@@ -54,13 +54,18 @@ def func4():
     """
     L = input("input password: ")
     char = False
+    ch = 0
     digit = False
-
+    di = 0
     for x in L:
-        if not char and x.isalpha():
-            char = True
+        if not char and x.isupper():
+            ch += 1
+            if ch == 1:
+                char = True
         elif not digit and x.isdigit():
-            digit = True
+            di += 1
+            if di == 5:
+                digit = True
         if char and digit:
             break
 
@@ -110,11 +115,20 @@ def func7(n):
         print("n= " + str(n))
 
 
-func7(5)
+#func7(5)
 
 
 
-#def func8():
+def func8(x):
+    i=2
+    L = [0,1]
+    while i<=x:
+        L.append(L[i-2]+L[i-1])
+        i+=1
+    print(L)
+func8(25)
+
+
 def pr(L):
     print("            <------>")
     for x in L:
@@ -144,7 +158,6 @@ def func9():
         while ii < n:
             L[i][ii] = "."
             ii+=1
-
         i+=1
     pr(L)
     ###############################################################
