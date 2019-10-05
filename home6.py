@@ -98,7 +98,20 @@ def func6():
 
 #func6()
 
-#def func7():
+def func7(n):
+    #n = random.randint(2, 5)
+    while True:
+        if n==1:
+            break
+        elif n%2==0:
+            n /= 2
+        else:
+            n = 3*n+1
+        print("n= " + str(n))
+
+
+func7(5)
+
 
 
 #def func8():
@@ -167,4 +180,4 @@ def func9():
         i+=1
         ii-=1
     pr(L)
-func9()
+#func9()
