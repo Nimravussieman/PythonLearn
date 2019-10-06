@@ -70,7 +70,7 @@ def func4():
         print("Your password is strong.")
     else:
         print("Your password is not strong enough.")
-func4()
+#func4()
 
 def func5():
     try:
@@ -191,3 +191,24 @@ def func9():
         ii-=1
     pr(L)
 #func9()
+
+def home_1_FromBeetroot():
+    print(list(range(1,100)))
+#home_1_FromBeetroot()
+
+def home_2_FromBeetroot():
+    L = []
+    while True:
+        _ = input (" input the name of a car: ")
+        if _ == 'q':
+            return
+        L.append(_)
+    print(L)
+
+def home_3_FromBeetroot():
+    L = list(range(1,15))
+    i = -1
+    while i > -len(L)-1:
+        print(L[i])
+        i-=1
+#home_3_FromBeetroot()
