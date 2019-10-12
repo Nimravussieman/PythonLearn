@@ -190,7 +190,7 @@ def func9():
         i+=1
         ii-=1
     pr(L)
-#func9()
+func9()
 
 def home_1_FromBeetroot():
     print(list(range(1,100)))
