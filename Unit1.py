@@ -1,7 +1,11 @@
+import time
+
+L = {2}
+global globRange
+
 def f_(numb):
-    if not (numb % 10) % 2:
-        return []
-    L = [numb]
+
+    List = [numb]
 
     num = [ch for ch in str(numb)]
 
@@ -9,40 +13,63 @@ def f_(numb):
     n=len(num)
     while i<n-1:
         save = num[0]
-        if not (int(save) % 10) % 2:
-            return []
         num[0:-1]=num[1:n]
         num[-1] = save
-        L.append(int("".join(num)))
+
+        integ = int("".join(num))
+        if not integ % 2 or integ in L:
+            return []
+        List.append(integ)
+
+        #L.append(int("".join(num)))
         i+=1
-    return L
-#print(f_(123))
+
+    if sum(List)/n == numb:
+        return [numb]
+    #print(sum(L)/n)
+    return List
+#print(f_(919))
 
 def func1_1(i):
-    ii=i-1
-    while ii > 1:
+    #print(range[2:i-1])
+    #ii=i-1
+    #for ii in [x for x in range(2,i-1) if x % 2]:
+    try:
+        newRange = globRange[0:globRange.index(i)]
+    except ValueError:
+        newRange = [x for x in range(2,i-1) if x % 2]
+
+    for ii in newRange:
+
+    #while ii > 2:
         if not i % ii:
             return False
-        ii -= 1
+     #   ii -= 1
     return True
 
 def func1(n):
-
+    old = time.time()
+    global globRange
+    globRange = [x for x in range(2,n) if x % 2]
     i=2
-    L={2}
+    for i in globRange:
+    #while i < n:
+            L2 = f_(i)
+            for x in L2:
+                if x in L or not func1_1(x):
+                    break
+            else:
+                L.update(L2)
 
-    while i < n:
-        L2 = f_(i)
-        for x in L2:
-            if not func1_1(x):
-                break
-        else:
-            L.update(L2)
+      #      i += 1
 
-        i+=1
-    print(L)
-func1(100000)
 
+
+    new = time.time()
+    print(sorted(L))
+    print(len(L))
+    print(new - old)
+func1(1000000)
 #print(list(range(1,1000,2)))
 
 #print([x for x in range(2,1000) if (x % 10) % 2])
