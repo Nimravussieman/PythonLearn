@@ -78,7 +78,10 @@ class Game:
             if input("new game? y/n?  ") == 'n':
                 break
 
+def main():
+    game = Game(Gamer("misha"),Gamer("computer",True))
+    game.begin()
 
-game = Game(Gamer("misha"),Gamer("computer",True))
-game.begin()
+if __name__ == '__main__':
+    main()
 
