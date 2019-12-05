@@ -1,0 +1,162 @@
+def func1():
+    x = 1000
+    i=2
+    ii=i-1
+    L=set()
+    b=True
+
+    while i<x:
+        while ii>1:
+            b = i%ii
+            if not b:
+                break
+            ii-=1
+        if b:
+            iTemp = f_(i)
+            if not iTemp:
+
+            L.add(i)
+        ii = i
+        i+=1
+    print(L)
+#func1()
+
+
+
+
+    while i<n:
+
+        q = True
+        if func1_1(i):
+            L2 = f_(i)
+            for x in L2:
+                q = func1_1(x)
+                if not q:
+                    break
+            if q:
+                L.append(i)
+        i+=1
+
+
+
+
+        for i in [x for x in range(2,n) if (x % 10) % 2]:
+        q = True
+        if func1_1(i):
+            L2 = f_(i)
+            for x in L2:
+                q = func1_1(x)
+                if not q:
+                    break
+            if q:
+                L.append(i)
+
+
+
+    def f_(numb):
+    if not (numb % 10) % 2:
+        return []
+    q = False
+    L = [numb]
+
+    num = [ch for ch in str(numb)]
+
+    i=0
+    n=len(num)-1
+    while i<n:
+
+
+
+        if not (int(num[-2]) % 10) % 2:
+            return []
+        L2=[num[-1]]
+        iii=0
+        while iii < n:
+            L2.append(num[iii])
+            iii+=1
+        L.append(int("".join(L2)))
+        num = L2
+        i+=1
+    return L
+
+
+
+
+    L.update([x for x in range(2,n) if x % 2 for l in f_(x) if func1_1(l)])
+
+
+
+
+import time
+def f_(numb):
+    #if not (numb % 10) % 2:
+     #   return []
+    if not numb % 2:
+        return []
+    L = [numb]
+
+    num = [ch for ch in str(numb)]
+
+    i=0
+    n=len(num)
+    while i<n-1:
+        save = num[0]
+        #if not (int(save) % 10) % 2:
+         #   return []
+        num[0:-1]=num[1:n]
+        num[-1] = save
+        integ = int("".join(num))
+        if integ % 2:
+            return []
+        else:
+            L.append(integ)
+        i+=1
+    return L
+#print(f_(123))
+
+def func1_1(i):
+    ii=i-1
+    while ii > 1:
+        if not i % ii:
+            return False
+        ii -= 1
+    return True
+
+def func1(n):
+    old = time.time()
+
+    i=2
+    L={2}
+    while i < n:
+        L2 = f_(i)
+        for x in L2:
+            if not func1_1(x):
+                continue
+        else:
+            L.update(L2)
+
+        i+=1
+    new = time.time()
+    print(sorted(L))
+    print(new - old)
+func1(100000)
+
+
+for range %2   1366.0155820846558
+
+500000
+[2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, 97, 113, 131, 197, 199, 311, 337, 373, 719, 733, 919, 971, 991, 1193, 1931, 3119, 3779, 7793, 7937, 9311, 9377, 11939, 19391, 19937, 37199, 39119, 71993, 91193, 93719, 93911, 99371, 193939, 199933, 319993, 331999, 391939, 393919, 919393, 933199, 939193, 939391, 993319, 999331]
+55
+345.58980345726013
+
+1000000
+[2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, 97, 113, 131, 197, 199, 311, 337, 373, 719, 733, 919, 971, 991, 1193, 1931, 3119, 3779, 7793, 7937, 9311, 9377, 11939, 19391, 19937, 37199, 39119, 71993, 91193, 93719, 93911, 99371, 193939, 199933, 319993, 331999, 391939, 393919, 919393, 933199, 939193, 939391, 993319, 999331]
+55
+1029.3846430778503
+
+1000000
+[2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, 97, 113, 131, 197, 199, 311, 337, 373, 719, 733, 919, 971, 991, 1193, 1931, 3119, 3779, 7793, 7937, 9311, 9377, 11939, 19391, 19937, 37199, 39119, 71993, 91193, 93719, 93911, 99371, 193939, 199933, 319993, 331999, 391939, 393919, 919393, 933199, 939193, 939391, 993319, 999331]
+55
+1328.4571220874786
+
+

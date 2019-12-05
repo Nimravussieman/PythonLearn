@@ -45,7 +45,7 @@ def func3():
     :return:
     """
     with open("Lorem.txt", "r") as f:
-        s = f.read().rstrip().lstrip().split("\n")
+        s = f.read().strip().split("\n")
     print("strings: {}".format(len(s)))
     i=1
     while i <= len(s):
@@ -131,7 +131,7 @@ def func7():
             count+=1
             print(x)
     print("\ncount:",count,"words")
-func7()
+#func7()
 
 def func8():
     with open("Practice_9_6","r") as f:

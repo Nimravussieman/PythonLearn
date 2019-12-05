@@ -181,3 +181,9 @@ class Biblioteck:
                     break
         else:
             print("Book is not available")
+
+
+def main():
+    print('library closed for construction \\(*_*)/')
+if __name__ == '__main__':
+    main()
