@@ -51,7 +51,8 @@ class Client:
         self.loop = False
     def recv(self):
         while self.loop:
-            data = set()
+            # data = set()
+            data = bytearray()
             while True:
                 try:
                     data+=self.socket.recv(1024)
@@ -116,7 +117,7 @@ class Client:
 # [t.join() for t in thread_list]
 
 clientList = []
-for x in range(1,2):
+for x in range(1,10):
     c = Client(f'name {x}')
     if not c.conn(HOST,PORT):
         continue
@@ -129,7 +130,8 @@ while True:
     for i,c in enumerate(clientList):
         c.sendall(f'message {i}')
 
-        time.sleep(10)
+        # time.sleep(10)
+    time.sleep(10)
 
 #     time.sleep(30)
 #
